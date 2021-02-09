@@ -171,6 +171,7 @@ var curArray = ['INR','USD','AUD','CAD','GBP'];
 function conversion(currency){
 
  var inputValue = + document.getElementById(currency).value;
+ if(isNaN(inputValue)) return;
  var inputCurrencyRate =   ExchangeRates.rates[currency];
  for(x in curArray){
      
