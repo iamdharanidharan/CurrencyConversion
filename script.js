@@ -36,7 +36,7 @@ divColInput.setAttribute('class', 'col-8 p-3');
 var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
-inputElement.setAttribute('oninput', 'conversion(\'INR\',event)');
+inputElement.setAttribute('oninput', 'conversion(\'INR\')');
 inputElement.setAttribute('id', 'INR');
 inputElement.setAttribute('placeholder', 'Indian Rupees');
 
@@ -66,7 +66,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'USD');
-inputElement.setAttribute('onkeyup', 'conversion(\'USD\',event)');
+inputElement.setAttribute('oninput', 'conversion(\'USD\')');
 inputElement.setAttribute('placeholder', 'US Dollars');
 
 divColInput.append(inputElement);
@@ -95,7 +95,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'AUD');
-inputElement.setAttribute('onkeyup', 'conversion(\'AUD\',event)');
+inputElement.setAttribute('oninput', 'conversion(\'AUD\')');
 inputElement.setAttribute('placeholder', 'Australian Dollars');
 
 divColInput.append(inputElement);
@@ -123,7 +123,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'CAD');
-inputElement.setAttribute('onkeyup', 'conversion(\'CAD\',event)');
+inputElement.setAttribute('oninput', 'conversion(\'CAD\')');
 inputElement.setAttribute('placeholder', 'Canadian Dollars');
 
 divColInput.append(inputElement);
@@ -152,7 +152,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'GBP');
-inputElement.setAttribute('onkeyup', 'conversion(\'GBP\',event)');
+inputElement.setAttribute('oninput', 'conversion(\'GBP\')');
 inputElement.setAttribute('placeholder', 'Great Britain Pound');
 divColInput.append(inputElement);
 
@@ -168,11 +168,9 @@ document.body.append(divContainer);
 
 var curArray = ['INR','USD','AUD','CAD','GBP'];
 
-function conversion( currency,event){
+function conversion(currency){
 
- //if(event.key != 'Backspace' && (event.key >= 0 && event.key <= 9)){
  var inputValue = + document.getElementById(currency).value;
- if(inputValue == '') return;
  var inputCurrencyRate =   ExchangeRates.rates[currency];
  for(x in curArray){
      
@@ -185,4 +183,4 @@ function conversion( currency,event){
      document.getElementById(curArray[x]).value = '';
     }
  }
-//}
+
