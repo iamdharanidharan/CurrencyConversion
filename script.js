@@ -14,7 +14,7 @@ var divRow = document.createElement('div');
 divRow.setAttribute('class', 'row pt-3');
 
 var divInputContainer = document.createElement('div');
-divInputContainer.setAttribute('class', 'offset-3 col-6');
+divInputContainer.setAttribute('class', 'offset-xl-3 offset-lg-3 col-lg-6 col-xl-6 col-md-8 col-sm-12');
 
 ///////////////////////////////////////////////
 
