@@ -41,7 +41,7 @@ divColInput.setAttribute('class', 'col-8 p-3');
 var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
-inputElement.setAttribute('onKeyUp', 'conversion(\'INR\',event)');
+inputElement.setAttribute('onkeyup', 'conversion(\'INR\',event)');
 inputElement.setAttribute('id', 'INR');
 inputElement.setAttribute('placeholder', 'Indian Rupees');
 
@@ -71,7 +71,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'USD');
-inputElement.setAttribute('onKeyUp', 'conversion(\'USD\',event)');
+inputElement.setAttribute('onkeyup', 'conversion(\'USD\',event)');
 inputElement.setAttribute('placeholder', 'US Dollars');
 
 divColInput.append(inputElement);
@@ -100,7 +100,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'AUD');
-inputElement.setAttribute('onKeyUp', 'conversion(\'AUD\',event)');
+inputElement.setAttribute('onkeyup', 'conversion(\'AUD\',event)');
 inputElement.setAttribute('placeholder', 'Australian Dollars');
 
 divColInput.append(inputElement);
@@ -128,7 +128,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'CAD');
-inputElement.setAttribute('onKeyUp', 'conversion(\'CAD\',event)');
+inputElement.setAttribute('onkeyup', 'conversion(\'CAD\',event)');
 inputElement.setAttribute('placeholder', 'Canadian Dollars');
 
 divColInput.append(inputElement);
@@ -157,7 +157,7 @@ var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'GBP');
-inputElement.setAttribute('onKeyUp', 'conversion(\'GBP\',event)');
+inputElement.setAttribute('onkeyup', 'conversion(\'GBP\',event)');
 inputElement.setAttribute('placeholder', 'Great Britain Pound');
 divColInput.append(inputElement);
 
