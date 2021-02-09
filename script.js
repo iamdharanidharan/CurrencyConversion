@@ -1,22 +1,4 @@
-/* var trendingRequest = new XMLHttpRequest();
-var api_K = "EhHGZ86K0tQzDH1jT4HiWqSD51GZfOEz";
-var gifURL = '';
-trendingRequest.open("GET",`https://api.giphy.com/v1/gifs/trending?api_key=${api_K}&limit=10`,true);
-trendingRequest.send();
-trendingRequest.onload = () => {
 
-    var giphyResponse = JSON.parse(trendingRequest.response);
-    
-    for(element in giphyResponse.data ){
-        gifURL = giphyResponse.data[element].fixed_height_downsampled.url;
-        var imgTag = document.createElement('img');
-        imgTag.setAttribute('class', 'img-fluid');
-        imgTag.setAttribute('src',gifURL);
-        imageBox.append(imgTag);
-    };
-    
-}
-*/
 async function getRates(){
 var ExchangeRatesResponse = await fetch('https://api.exchangeratesapi.io/latest');
 ExchangeRatesResponse = await ExchangeRatesResponse.json();
@@ -25,12 +7,8 @@ return ExchangeRatesResponse;
 var ExchangeRates;
 var data = getRates().then(r => ExchangeRates=r);
 
-//console.log(data);
-// Link bootstrap
-var css = document.createElement('link');
-css.setAttribute('rel', 'stylesheet');
-css.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css');
-document.head.append(css);
+
+
 
 
 // Page container
@@ -38,7 +16,7 @@ var divContainer = document.createElement('div');
 divContainer.setAttribute('class', 'container');
 
 var divRow = document.createElement('div');
-divRow.setAttribute('class', 'row');
+divRow.setAttribute('class', 'row pt-3');
 
 var divInputContainer = document.createElement('div');
 divInputContainer.setAttribute('class', 'offset-3 col-6');
@@ -47,22 +25,21 @@ divInputContainer.setAttribute('class', 'offset-3 col-6');
 
 
 var divInputBoxRow = document.createElement('div');
-divInputBoxRow.setAttribute('class', 'row');
+divInputBoxRow.setAttribute('class', 'row pt-3');
 
 var divColImage = document.createElement('div');
-divColImage.setAttribute('class', 'col-4');
+divColImage.setAttribute('class', 'col-4 p-3');
 
-var currencyLogo = document.createElement('img');
-currencyLogo.setAttribute('height','50px');
-currencyLogo.setAttribute('width','50px');
+var currencyLogo = document.createElement('h5');
+currencyLogo.innerText = 'INR';
 
 divColImage.append(currencyLogo);
 
 var divColInput = document.createElement('div');
-divColInput.setAttribute('class', 'col-8');
+divColInput.setAttribute('class', 'col-8 p-3');
 
 var inputElement = document.createElement('input');
-inputElement.setAttribute('type', 'number');
+inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('onKeyUp', 'conversion(\'INR\',event)');
 inputElement.setAttribute('id', 'INR');
@@ -77,22 +54,21 @@ divInputContainer.append(divInputBoxRow);
 
 
 var divInputBoxRow = document.createElement('div');
-divInputBoxRow.setAttribute('class', 'row');
+divInputBoxRow.setAttribute('class', 'row pt-3');
 
 var divColImage = document.createElement('div');
-divColImage.setAttribute('class', 'col-4');
+divColImage.setAttribute('class', 'col-4 p-3');
 
-var currencyLogo = document.createElement('img');
-currencyLogo.setAttribute('height','50px');
-currencyLogo.setAttribute('width','50px');
+var currencyLogo = document.createElement('h5');
+currencyLogo.innerText = 'USD';
 
 divColImage.append(currencyLogo);
 
 var divColInput = document.createElement('div');
-divColInput.setAttribute('class', 'col-8');
+divColInput.setAttribute('class', 'col-8 p-3');
 
 var inputElement = document.createElement('input');
-inputElement.setAttribute('type', 'number');
+inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'USD');
 inputElement.setAttribute('onKeyUp', 'conversion(\'USD\',event)');
@@ -107,25 +83,24 @@ divInputContainer.append(divInputBoxRow);
 
 
 var divInputBoxRow = document.createElement('div');
-divInputBoxRow.setAttribute('class', 'row');
+divInputBoxRow.setAttribute('class', 'row pt-3');
 
 var divColImage = document.createElement('div');
-divColImage.setAttribute('class', 'col-4');
+divColImage.setAttribute('class', 'col-4 p-3');
 
-var currencyLogo = document.createElement('img');
-currencyLogo.setAttribute('height','50px');
-currencyLogo.setAttribute('width','50px');
+var currencyLogo = document.createElement('h5');
+currencyLogo.innerText = 'AUD';
 
 divColImage.append(currencyLogo);
 
 var divColInput = document.createElement('div');
-divColInput.setAttribute('class', 'col-8');
+divColInput.setAttribute('class', 'col-8 p-3');
 
 var inputElement = document.createElement('input');
-inputElement.setAttribute('type', 'number');
+inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'AUD');
-inputElement.setAttribute('onKeyUp', 'conversion(\'AUS\',event)');
+inputElement.setAttribute('onKeyUp', 'conversion(\'AUD\',event)');
 inputElement.setAttribute('placeholder', 'Australian Dollars');
 
 divColInput.append(inputElement);
@@ -137,22 +112,20 @@ divInputContainer.append(divInputBoxRow);
 
 
 var divInputBoxRow = document.createElement('div');
-divInputBoxRow.setAttribute('class', 'row');
+divInputBoxRow.setAttribute('class', 'row pt-3');
 
 var divColImage = document.createElement('div');
-divColImage.setAttribute('class', 'col-4');
+divColImage.setAttribute('class', 'col-4 p-3');
 
-var currencyLogo = document.createElement('img');
-currencyLogo.setAttribute('height','50px');
-currencyLogo.setAttribute('width','50px');
-
+var currencyLogo = document.createElement('h5');
+currencyLogo.innerText = 'CAD';
 divColImage.append(currencyLogo);
 
 var divColInput = document.createElement('div');
-divColInput.setAttribute('class', 'col-8');
+divColInput.setAttribute('class', 'col-8 p-3');
 
 var inputElement = document.createElement('input');
-inputElement.setAttribute('type', 'number');
+inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'CAD');
 inputElement.setAttribute('onKeyUp', 'conversion(\'CAD\',event)');
@@ -168,21 +141,20 @@ divInputContainer.append(divInputBoxRow);
 
 
 var divInputBoxRow = document.createElement('div');
-divInputBoxRow.setAttribute('class', 'row');
+divInputBoxRow.setAttribute('class', 'row pt-3');
 
 var divColImage = document.createElement('div');
-divColImage.setAttribute('class', 'col-4');
+divColImage.setAttribute('class', 'col-4 p-3');
 
-var currencyLogo = document.createElement('img');
-currencyLogo.setAttribute('height','50px');
-currencyLogo.setAttribute('width','50px');
+var currencyLogo = document.createElement('h5');
+currencyLogo.innerText = 'GBP';
 divColImage.append(currencyLogo);
 
 var divColInput = document.createElement('div');
-divColInput.setAttribute('class', 'col-8');
+divColInput.setAttribute('class', 'col-8 p-3');
 
 var inputElement = document.createElement('input');
-inputElement.setAttribute('type', 'number');
+inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
 inputElement.setAttribute('id', 'GBP');
 inputElement.setAttribute('onKeyUp', 'conversion(\'GBP\',event)');
@@ -201,11 +173,10 @@ document.body.append(divContainer);
 
 var curArray = ['INR','USD','AUD','CAD','GBP'];
 
-function conversion(  currency, event){
+function conversion(currency, event){
  //var inputs = document.querySelectorAll('form-control'); 
- if(event.keyCode != 8){
+ if(event.keyCode != 8 && (event.keyCode >46 && event.keyCode <58)){
  var inputValue = + document.getElementById(currency).value;
- 
  var inputCurrencyRate =   ExchangeRates.rates[currency];
  for(x in curArray){
      //document.getElementById(currency);
