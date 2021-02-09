@@ -36,7 +36,7 @@ divColInput.setAttribute('class', 'col-8 p-3');
 var inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('class', 'form-control');
-inputElement.setAttribute('onkeyup', 'conversion(\'INR\',event)');
+inputElement.setAttribute('oninput', 'conversion(\'INR\',event)');
 inputElement.setAttribute('id', 'INR');
 inputElement.setAttribute('placeholder', 'Indian Rupees');
 
@@ -170,8 +170,9 @@ var curArray = ['INR','USD','AUD','CAD','GBP'];
 
 function conversion( currency,event){
 
- if(event.key != 'Backspace' && (event.key >= 0 && event.key <= 9)){
+ //if(event.key != 'Backspace' && (event.key >= 0 && event.key <= 9)){
  var inputValue = + document.getElementById(currency).value;
+ if(inputValue == '') return;
  var inputCurrencyRate =   ExchangeRates.rates[currency];
  for(x in curArray){
      
@@ -184,4 +185,4 @@ function conversion( currency,event){
      document.getElementById(curArray[x]).value = '';
     }
  }
-}
+//}
